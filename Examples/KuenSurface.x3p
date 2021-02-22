@@ -1,0 +1,33 @@
+[Parametric]
+Name=Kuen's Surface
+XPlotEquation=2*(cos(u)+u*sin(u))*sin(v)/(1+u*u*sin(v)*sin(v))
+YPlotEquation=2*(sin(u)-u*cos(u))*sin(v)/(1+u*u*sin(v)*sin(v))
+ZPlotEquation=log10(tan(v/2))+2*cos(v)/(1+u*u*sin(v)*sin(v))
+C1=1
+C2=1
+C3=1
+C4=1
+C5=1
+C6=1
+C7=1
+C8=1
+ZRotate= -70.00000
+XYTilt=  60.00000
+LineColor=00000000
+BackColor=16777215
+ShowColor=00000001
+RemoveHidden=00000001
+PlotScale=   80
+ShowAxis=00000000
+UMin=  -4.00000
+UMax=   4.00000
+VMin=   0.05000
+VMax=   3.09200
+NULines=00000050
+NVLines=00000100
+RPlotEquation=(sin(2*u)+1)*50
+GPlotEquation=(cos(v)+1)*50
+BPlotEquation=(cos(2*u)+1)*50
+DrawULines=00000001
+DrawVLines=00000001
+

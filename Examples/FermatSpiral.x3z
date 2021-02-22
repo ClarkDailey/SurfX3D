@@ -1,0 +1,36 @@
+[Explicit]
+Name=Fermat's Spiral
+PlotEquation=c1*exp(-c2*abs(sin((x*x+y*y) -c3^2*atan2(y,x))))
+C1=1
+C2=.2
+C3=1
+C4=1
+C5=1
+C6=1
+C7=1
+C8=5
+ZRotate=60.000000
+XYTilt=60.000000
+LineColor=0
+BackColor=16777215
+ShowColor=1
+RemoveHidden=1
+PlotScale=90.000000
+ShowAxis=0
+XMin=-5.000000
+XMax=5.000000
+YMin=-5.000000
+YMax=5.000000
+ZMin=-1.000000
+ZMax=1.000000
+nXLines=50
+nYLines=50
+ShowX=1
+ShowY=0
+
+RPlotEquation=(sin(z*c8)+1)*50
+GPlotEquation=(cos(z*c8)+1)*50
+BPlotEquation=(sin(3*z*c8)+1)*50
+LimitZ=0
+nXMesh=100
+nYMesh=100

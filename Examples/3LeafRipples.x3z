@@ -1,0 +1,36 @@
+[Explicit]
+Name=3 Leaf Rose Ripples
+PlotEquation=c1*exp(-c2*abs(sin(((x*x+y*y) -c7))))
+C1=1
+C2=.2
+C3=1
+C4=atan2(y,x)
+C5=2*cos(c4)+cos(2*c4)
+C6=2*sin(c4)-sin(2*c4)
+C7=c3^2*(c5^2+c6^2)
+C8=6
+ZRotate=60.000000
+XYTilt=60.000000
+LineColor=0
+BackColor=16777215
+ShowColor=1
+RemoveHidden=1
+PlotScale=100.000000
+ShowAxis=0
+XMin=-4.000000
+XMax=4.000000
+YMin=-4.000000
+YMax=4.000000
+ZMin=-1.000000
+ZMax=1.000000
+nXLines=150
+nYLines=150
+ShowX=0
+ShowY=0
+
+RPlotEquation=(sin(z*c8)+1)*50
+GPlotEquation=(cos(z*c8)+1)*50
+BPlotEquation=0
+LimitZ=0
+nXMesh=150
+nYMesh=150

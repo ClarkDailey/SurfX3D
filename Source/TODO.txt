@@ -1,0 +1,10 @@
+TODO.txt   2/16/2021
+--------
+
+Needs work
+1) Print
+
+Bugs
+1) Copy to clipboard - does not work
+2) Hover tips 
+

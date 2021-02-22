@@ -1,0 +1,126 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: SurfX3D - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x409 /fo"Debug/SurfX3D.res" /d "_DEBUG" "C:\Projects\SurfX3D\Source\SurfX3D.rc"" 
+Creating temporary file "C:\Users\Parents\AppData\Local\Temp\RSPB5C9.tmp" with contents
+[
+/nologo /MTd /W4 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /FR"Debug/" /Fp"Debug/SurfX3D.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Projects\SurfX3D\Source\DlgNewSurf.cpp"
+"C:\Projects\SurfX3D\Source\FormF.cpp"
+"C:\Projects\SurfX3D\Source\FormN.cpp"
+"C:\Projects\SurfX3D\Source\FormP.cpp"
+"C:\Projects\SurfX3D\Source\FormZ.cpp"
+"C:\Projects\SurfX3D\Source\MainFrm.cpp"
+"C:\Projects\SurfX3D\Source\Plot3D.cpp"
+"C:\Projects\SurfX3D\Source\Plot3DF.cpp"
+"C:\Projects\SurfX3D\Source\Plot3DP.cpp"
+"C:\Projects\SurfX3D\Source\Plot3DT.cpp"
+"C:\Projects\SurfX3D\Source\Plot3DZ.cpp"
+"C:\Projects\SurfX3D\Source\PlotCalc.cpp"
+"C:\Projects\SurfX3D\Source\PlotSplitter.cpp"
+"C:\Projects\SurfX3D\Source\SurfX3D.cpp"
+"C:\Projects\SurfX3D\Source\SurfX3DDoc.cpp"
+"C:\Projects\SurfX3D\Source\SurfX3DView.cpp"
+"C:\Projects\SurfX3D\Source\TriMesh.cpp"
+]
+Creating command line "cl.exe @C:\Users\Parents\AppData\Local\Temp\RSPB5C9.tmp" 
+Creating temporary file "C:\Users\Parents\AppData\Local\Temp\RSPB5CA.tmp" with contents
+[
+/nologo /MTd /W4 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /FR"Debug/" /Fp"Debug/SurfX3D.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Projects\SurfX3D\Source\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\Users\Parents\AppData\Local\Temp\RSPB5CA.tmp" 
+Creating temporary file "C:\Users\Parents\AppData\Local\Temp\RSPB5CB.tmp" with contents
+[
+opengl32.lib glu32.lib glaux.lib /nologo /subsystem:windows /incremental:yes /pdb:"Debug/SurfX3D.pdb" /debug /machine:I386 /out:"Debug/SurfX3D.exe" /pdbtype:sept 
+.\Debug\DlgNewSurf.obj
+.\Debug\FormF.obj
+.\Debug\FormN.obj
+.\Debug\FormP.obj
+.\Debug\FormZ.obj
+.\Debug\MainFrm.obj
+.\Debug\Plot3D.obj
+.\Debug\Plot3DF.obj
+.\Debug\Plot3DP.obj
+.\Debug\Plot3DT.obj
+.\Debug\Plot3DZ.obj
+.\Debug\PlotCalc.obj
+.\Debug\PlotSplitter.obj
+.\Debug\StdAfx.obj
+.\Debug\SurfX3D.obj
+.\Debug\SurfX3DDoc.obj
+.\Debug\SurfX3DView.obj
+.\Debug\TriMesh.obj
+.\Debug\SurfX3D.res
+]
+Creating command line "link.exe @C:\Users\Parents\AppData\Local\Temp\RSPB5CB.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+DlgNewSurf.cpp
+FormF.cpp
+FormN.cpp
+FormP.cpp
+FormZ.cpp
+MainFrm.cpp
+Plot3D.cpp
+Plot3DF.cpp
+Plot3DP.cpp
+Plot3DT.cpp
+Plot3DZ.cpp
+PlotCalc.cpp
+PlotSplitter.cpp
+SurfX3D.cpp
+SurfX3DDoc.cpp
+SurfX3DView.cpp
+TriMesh.cpp
+Generating Code...
+Linking...
+Creating temporary file "C:\Users\Parents\AppData\Local\Temp\RSPBDF7.tmp" with contents
+[
+/nologo /o"Debug/SurfX3D.bsc" 
+.\Debug\StdAfx.sbr
+.\Debug\DlgNewSurf.sbr
+.\Debug\FormF.sbr
+.\Debug\FormN.sbr
+.\Debug\FormP.sbr
+.\Debug\FormZ.sbr
+.\Debug\MainFrm.sbr
+.\Debug\Plot3D.sbr
+.\Debug\Plot3DF.sbr
+.\Debug\Plot3DP.sbr
+.\Debug\Plot3DT.sbr
+.\Debug\Plot3DZ.sbr
+.\Debug\PlotCalc.sbr
+.\Debug\PlotSplitter.sbr
+.\Debug\SurfX3D.sbr
+.\Debug\SurfX3DDoc.sbr
+.\Debug\SurfX3DView.sbr
+.\Debug\TriMesh.sbr]
+Creating command line "bscmake.exe @C:\Users\Parents\AppData\Local\Temp\RSPBDF7.tmp"
+Creating browse info file...
+<h3>Output Window</h3>
+Creating temporary file "C:\Users\Parents\AppData\Local\Temp\RSPBEE2.bat" with contents
+[
+@echo off
+xcopy /y Debug\SurfX3D.exe ..\*.*
+]
+Creating command line "C:\Users\Parents\AppData\Local\Temp\RSPBEE2.bat"
+
+Debug\SurfX3D.exe
+1 File(s) copied
+
+
+
+<h3>Results</h3>
+SurfX3D.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

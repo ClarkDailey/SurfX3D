@@ -1,0 +1,36 @@
+[Explicit]
+Name=Figure 8 Crater
+PlotEquation=c1*exp(-c2*abs( c6^2 + c3^2 - 2*c3*cos(2*c5) - c4^2  ))
+C1=.5
+C2=.1
+C3=1^2
+C4=1.35^2
+C5=atan2(y,x)
+C6=x^2+y^2
+C7=1
+C8=10
+ZRotate=250.000000
+XYTilt=60.000000
+LineColor=0
+BackColor=16777215
+ShowColor=1
+RemoveHidden=1
+PlotScale=90.000000
+ShowAxis=0
+XMin=-2.000000
+XMax=2.000000
+YMin=-2.000000
+YMax=2.000000
+ZMin=-0.400000
+ZMax=0.400000
+nXLines=64
+nYLines=64
+ShowX=0
+ShowY=0
+
+RPlotEquation=(sin(z*c8)+1)*50
+GPlotEquation=(cos(z*c8)+1)*50
+BPlotEquation=0
+LimitZ=0
+nXMesh=100
+nYMesh=100

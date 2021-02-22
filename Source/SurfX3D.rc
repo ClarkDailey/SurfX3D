@@ -1,0 +1,851 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\SurfX3D.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#include ""afxprint.rc""       // printing/print preview resources\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\SurfX3D.ico"
+IDR_SURFX3DTYPE         ICON    DISCARDABLE     "res\\SurfX3DDoc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+IDB_RENDERING1          BITMAP  DISCARDABLE     "res\\Rendering.bmp"
+IDB_TREFOIL             BITMAP  DISCARDABLE     "res\\trefoil.bmp"
+IDB_TOOLBAR             BITMAP  DISCARDABLE     "res\\Toolbar2.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_PLOT_CANCEL
+    SEPARATOR
+    BUTTON      ID_PLOT_DRAWPLOT
+    BUTTON      ID_ZOOM_IN
+    BUTTON      ID_ZOOM_OUT
+    BUTTON      ID_BTN_LOCK_UD
+    BUTTON      ID_BTN_LOCK_LR
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "&Print...\tCtrl+P",           ID_FILE_PRINT
+        MENUITEM "Print Pre&view",              ID_FILE_PRINT_PREVIEW
+        MENUITEM "P&rint Setup...",             ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Plot"
+    BEGIN
+        MENUITEM "&Auto Draw",                  ID_PLOT_AUTODRAW
+        MENUITEM "&Draw Plot",                  ID_PLOT_DRAWPLOT
+        MENUITEM "&Cancel",                     ID_PLOT_CANCEL
+    END
+    POPUP "Export"
+    BEGIN
+        MENUITEM "STL",                         ID_EXPORT_STL
+        MENUITEM "DXF",                         ID_EXPORT_DXF
+        MENUITEM "&VRML",                       ID_EXPORT_VRML
+        MENUITEM "&POV",                        ID_EXPORT_POV
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM SEPARATOR
+        MENUITEM "Tips...",                     ID_HELP_TIPS
+        MENUITEM "Functions...",                ID_HELP_FUNCTIONS
+        MENUITEM "Open Help",                   ID_OPEN_HELP_FILE
+        MENUITEM "&About SurfX3D...",           ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 181, 106
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About SurfX3D"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,132,7,42,14,WS_GROUP
+    ICON            IDR_MAINFRAME,IDC_STATIC,9,12,20,20
+    LTEXT           "Surface Explorer 3D v3.0",IDC_STATIC,39,11,88,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright (C) 2021",IDC_STATIC,41,25,72,8
+    CTEXT           "Clark Dailey\nclarkdailey@comcast.net",IDC_STATIC,45,46,
+                    90,21,SS_SUNKEN
+    CTEXT           "e-mail me your interesting surface files,\nand I will include them in the examples.",
+                    IDC_STATIC,25,70,138,20,SS_NOPREFIX | SS_SUNKEN
+END
+
+IDD_FORMP DIALOG DISCARDABLE  0, 0, 500, 418
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EDIT_SURFNAME,10,4,229,12,ES_AUTOHSCROLL
+    GROUPBOX        "Parametric Surface Equation Definition",IDC_STATIC,3,19,
+                    487,60
+    LTEXT           "X(u,v) =",IDC_STATIC,10,34,25,9
+    EDITTEXT        IDC_EDIT_XPLOT_EQUATION,37,31,448,12,ES_AUTOHSCROLL
+    LTEXT           "Y(u,v) =",IDC_STATIC,10,47,25,9
+    EDITTEXT        IDC_EDIT_YPLOT_EQUATION,37,45,448,12,ES_AUTOHSCROLL
+    LTEXT           "Z(u,v) =",IDC_STATIC,10,61,25,9
+    EDITTEXT        IDC_EDIT_ZPLOT_EQUATION,37,60,448,12,ES_AUTOHSCROLL
+    GROUPBOX        "Sub-Expressions",IDC_STATIC,3,79,486,77
+    LTEXT           "C1=",IDC_STATIC,7,95,12,9
+    EDITTEXT        IDC_EDIT_C1,22,93,95,12,ES_AUTOHSCROLL
+    LTEXT           "C2=",IDC_STATIC,7,109,12,9
+    EDITTEXT        IDC_EDIT_C2,22,106,95,12,ES_AUTOHSCROLL
+    LTEXT           "C3=",IDC_STATIC,7,123,12,9
+    EDITTEXT        IDC_EDIT_C3,22,121,95,12,ES_AUTOHSCROLL
+    LTEXT           "C4=",IDC_STATIC,7,138,12,9
+    EDITTEXT        IDC_EDIT_C4,22,136,95,12,ES_AUTOHSCROLL
+    LTEXT           "C5=",IDC_STATIC,127,95,12,9
+    EDITTEXT        IDC_EDIT_C5,140,93,343,12,ES_AUTOHSCROLL
+    LTEXT           "C6=",IDC_STATIC,127,108,12,9
+    EDITTEXT        IDC_EDIT_C6,140,106,343,12,ES_AUTOHSCROLL
+    LTEXT           "C7=",IDC_STATIC,127,123,12,9
+    EDITTEXT        IDC_EDIT_C7,140,121,343,12,ES_AUTOHSCROLL
+    LTEXT           "C8=",IDC_STATIC,127,138,12,9
+    EDITTEXT        IDC_EDIT_C8,140,136,343,12,ES_AUTOHSCROLL
+    GROUPBOX        "Surface Colorizing    Range 0-100",IDC_STATIC,3,159,488,
+                    75
+    CONTROL         "Enable Color Surface",IDC_CHECK_SHOW_COLOR,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,18,171,89,12
+    LTEXT           "R(u,v) =",IDC_STATIC,10,189,25,9
+    EDITTEXT        IDC_EDIT_RED_EQUATION,37,187,447,12,ES_AUTOHSCROLL
+    LTEXT           "G(u,v) =",IDC_STATIC,10,203,25,9
+    EDITTEXT        IDC_EDIT_GREEN_EQUATION,37,201,447,12,ES_AUTOHSCROLL
+    LTEXT           "B(u,v) =",IDC_STATIC,10,217,25,9
+    EDITTEXT        IDC_EDIT_BLUE_EQUATION,37,215,447,12,ES_AUTOHSCROLL
+    GROUPBOX        "Ranges",IDC_STATIC,3,234,92,61,WS_GROUP
+    CONTROL         "Min",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,
+                    28,246,17,8
+    LTEXT           "Max",IDC_STATIC,64,246,17,8
+    LTEXT           "U",IDC_STATIC,9,260,8,8
+    EDITTEXT        IDC_EDIT_UMIN,17,258,34,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_UMAX,56,258,34,12,ES_AUTOHSCROLL
+    LTEXT           "V",IDC_STATIC,9,277,8,8
+    EDITTEXT        IDC_EDIT_VMIN,17,274,34,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_VMAX,56,274,34,12,ES_AUTOHSCROLL
+    GROUPBOX        "Mesh Size",IDC_STATIC,99,234,58,59,WS_GROUP
+    LTEXT           "#",IDC_STATIC,128,246,11,8
+    LTEXT           "U",IDC_STATIC,104,260,8,8
+    EDITTEXT        IDC_EDIT_NX_MESH,116,257,34,12,ES_AUTOHSCROLL
+    LTEXT           "V",IDC_STATIC,104,277,8,8
+    EDITTEXT        IDC_EDIT_NY_MESH,116,273,34,12,ES_AUTOHSCROLL
+    GROUPBOX        "View Angles (Deg)",IDC_STATIC,3,297,71,50,WS_GROUP
+    LTEXT           "XY Tilt",IDC_STATIC,8,313,28,9
+    EDITTEXT        IDC_EDIT_XYTILT,40,311,28,12,ES_AUTOHSCROLL
+    LTEXT           "Z Rotate",IDC_STATIC,8,329,28,9
+    EDITTEXT        IDC_EDIT_ZROTATE,40,327,28,12,ES_AUTOHSCROLL
+    GROUPBOX        "Overall",IDC_STATIC,3,350,60,65
+    LTEXT           "Scale %",IDC_STATIC,8,361,25,9
+    EDITTEXT        IDC_EDIT_SCALE,36,359,21,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "Back Color",IDC_BTN_BACK_COLOR,9,374,27,23,BS_MULTILINE
+    CONTROL         "",IDC_STATIC_BG,"Static",SS_SIMPLE | SS_SUNKEN | 
+                    WS_GROUP,38,376,19,18
+    CONTROL         "Show Axis",IDC_CHECK_SHOW_AXIS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,9,400,49,12
+    GROUPBOX        "Line Control",IDC_STATIC,80,297,64,92,WS_GROUP
+    LTEXT           "Show      #",IDC_STATIC,93,308,40,8
+    LTEXT           "U",IDC_STATIC,86,322,8,8
+    CONTROL         "",IDC_CHECK_DRAW_ULINES,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,97,320,11,12
+    EDITTEXT        IDC_EDIT_ULINES,113,319,25,12,ES_AUTOHSCROLL
+    LTEXT           "V",IDC_STATIC,86,336,8,8
+    CONTROL         "",IDC_CHECK_DRAW_VLINES,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,97,335,11,12
+    EDITTEXT        IDC_EDIT_VLINES,113,335,25,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Line Color",IDC_BTN_LINE_COLOR,88,353,47,15
+    CONTROL         "",IDC_STATIC_FG,"Static",SS_SIMPLE | SS_SUNKEN | 
+                    WS_GROUP,88,372,47,8
+END
+
+IDD_FORMZ DIALOG DISCARDABLE  0, 0, 499, 424
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EDIT_SURFNAME,13,4,223,12,ES_AUTOHSCROLL
+    GROUPBOX        "Explicit Surface Equation Definition",IDC_STATIC,0,21,
+                    488,33
+    LTEXT           "Z(x,y) = ",IDC_STATIC,5,37,23,9
+    EDITTEXT        IDC_EDIT_PLOT_EQUATION,32,35,447,12,ES_AUTOHSCROLL
+    GROUPBOX        "Sub-Expressions",IDC_STATIC,0,55,487,77
+    LTEXT           "C1=",IDC_STATIC,7,73,14,9
+    EDITTEXT        IDC_EDIT_C1,22,70,98,12,ES_AUTOHSCROLL
+    LTEXT           "C2=",IDC_STATIC,7,87,14,9
+    EDITTEXT        IDC_EDIT_C2,22,84,98,12,ES_AUTOHSCROLL
+    LTEXT           "C3=",IDC_STATIC,7,101,14,9
+    EDITTEXT        IDC_EDIT_C3,22,98,98,12,ES_AUTOHSCROLL
+    LTEXT           "C4=",IDC_STATIC,7,115,14,9
+    EDITTEXT        IDC_EDIT_C4,22,112,98,12,ES_AUTOHSCROLL
+    LTEXT           "C5=",IDC_STATIC,126,73,14,9
+    EDITTEXT        IDC_EDIT_C5,140,70,339,12,ES_AUTOHSCROLL
+    LTEXT           "C6=",IDC_STATIC,126,87,14,9
+    EDITTEXT        IDC_EDIT_C6,140,84,339,12,ES_AUTOHSCROLL
+    LTEXT           "C7=",IDC_STATIC,126,101,14,9
+    EDITTEXT        IDC_EDIT_C7,140,98,339,12,ES_AUTOHSCROLL
+    LTEXT           "C8=",IDC_STATIC,126,115,14,9
+    EDITTEXT        IDC_EDIT_C8,140,112,339,12,ES_AUTOHSCROLL
+    GROUPBOX        "Surface Colorizing    Range 0-100",IDC_STATIC,0,133,484,
+                    76
+    CONTROL         "Enable Color Surface",IDC_CHECK_SHOW_COLOR,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,16,146,88,10
+    LTEXT           "R(x,y,z) =",IDC_STATIC,8,163,29,9
+    EDITTEXT        IDC_EDIT_RED_EQUATION,40,161,437,12,ES_AUTOHSCROLL
+    LTEXT           "G(x,y,z) =",IDC_STATIC,8,177,29,9
+    EDITTEXT        IDC_EDIT_GREEN_EQUATION,40,175,437,12,ES_AUTOHSCROLL
+    LTEXT           "B(x,y,z) =",IDC_STATIC,8,191,29,9
+    EDITTEXT        IDC_EDIT_BLUE_EQUATION,40,189,437,12,ES_AUTOHSCROLL
+    GROUPBOX        "Ranges",IDC_STATIC,0,212,89,79
+    LTEXT           "Min",IDC_STATIC,27,222,17,9
+    LTEXT           "Max",IDC_STATIC,61,222,17,9
+    LTEXT           "X",IDC_STATIC,5,233,8,8
+    EDITTEXT        IDC_EDIT_XMIN,17,232,29,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_XMAX,53,232,29,12,ES_AUTOHSCROLL
+    LTEXT           "Y",IDC_STATIC,5,247,8,8
+    EDITTEXT        IDC_EDIT_YMIN,17,246,29,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_YMAX,53,246,29,12,ES_AUTOHSCROLL
+    LTEXT           "Z",IDC_STATIC,5,261,8,8
+    EDITTEXT        IDC_EDIT_ZMIN,17,260,29,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_ZMAX,53,260,29,12,ES_AUTOHSCROLL
+    CONTROL         "Limit Z",IDC_CHECK_ZLIMIT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,32,277,38,10
+    GROUPBOX        "Mesh Size",IDC_STATIC,93,212,49,55
+    LTEXT           "#",IDC_STATIC,118,221,8,8
+    LTEXT           "X",IDC_STATIC,97,234,8,8
+    EDITTEXT        IDC_EDIT_NX_MESH,108,232,27,12,ES_AUTOHSCROLL
+    LTEXT           "Y",IDC_STATIC,97,248,8,8
+    EDITTEXT        IDC_EDIT_NY_MESH,108,246,27,12,ES_AUTOHSCROLL
+    GROUPBOX        "View Angles (Deg)",IDC_STATIC,0,295,73,49
+    LTEXT           "XY Tilt",IDC_STATIC,7,312,28,9
+    EDITTEXT        IDC_EDIT_XYTILT,40,309,28,12,ES_AUTOHSCROLL
+    LTEXT           "Z Rotate",IDC_STATIC,7,328,28,9
+    EDITTEXT        IDC_EDIT_ZROTATE,40,325,28,12,ES_AUTOHSCROLL
+    GROUPBOX        "Overall",IDC_STATIC,0,347,65,72
+    LTEXT           "Scale %",IDC_STATIC,3,360,26,9
+    EDITTEXT        IDC_EDIT_SCALE,30,358,29,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Back Color",IDC_BTN_BACK_COLOR,6,376,30,21,BS_MULTILINE
+    CONTROL         "",IDC_STATIC_BG,"Static",SS_SIMPLE | SS_SUNKEN | 
+                    WS_GROUP,39,378,19,19
+    CONTROL         "Show Axis",IDC_CHECK_SHOW_AXIS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,9,402,46,10
+    GROUPBOX        "Line Control",IDC_STATIC,77,295,69,92
+    LTEXT           "Show      #",IDC_STATIC,91,307,43,9
+    LTEXT           "X",IDC_STATIC,83,319,8,8
+    CONTROL         "",IDC_CHECK_DRAW_XLINES,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,95,320,10,10
+    EDITTEXT        IDC_EDIT_NXLINES,111,319,27,12,ES_AUTOHSCROLL
+    LTEXT           "Y",IDC_STATIC,83,335,8,8
+    CONTROL         "",IDC_CHECK_DRAW_YLINES,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,95,334,11,13
+    EDITTEXT        IDC_EDIT_NYLINES,111,335,27,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Line Color",IDC_BTN_LINE_COLOR,91,351,39,14
+    CONTROL         "",IDC_STATIC_FG,"Static",SS_SIMPLE | SS_SUNKEN | 
+                    WS_GROUP,91,369,39,9
+END
+
+IDD_FORMF DIALOG DISCARDABLE  0, 0, 500, 408
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EDIT_SURFNAME,12,4,222,12,ES_AUTOHSCROLL
+    GROUPBOX        "Implicit Surface Equation Definition",IDC_STATIC,0,17,
+                    491,33
+    LTEXT           "F(x,y,z)=",IDC_STATIC,11,32,28,9
+    EDITTEXT        IDC_EDIT_PLOT_EQUATION,41,31,446,12,ES_AUTOHSCROLL
+    GROUPBOX        "Sub-Expressions",IDC_STATIC,0,53,490,77
+    LTEXT           "C1=",IDC_STATIC,6,71,13,9
+    EDITTEXT        IDC_EDIT_C1,22,68,96,12,ES_AUTOHSCROLL
+    LTEXT           "C2=",IDC_STATIC,6,85,13,9
+    EDITTEXT        IDC_EDIT_C2,22,82,96,12,ES_AUTOHSCROLL
+    LTEXT           "C3=",IDC_STATIC,6,99,13,9
+    EDITTEXT        IDC_EDIT_C3,22,96,96,12,ES_AUTOHSCROLL
+    LTEXT           "C4=",IDC_STATIC,6,113,13,9
+    EDITTEXT        IDC_EDIT_C4,22,110,96,12,ES_AUTOHSCROLL
+    LTEXT           "C5=",IDC_STATIC,123,71,13,9
+    EDITTEXT        IDC_EDIT_C5,138,68,347,12,ES_AUTOHSCROLL
+    LTEXT           "C6=",IDC_STATIC,123,85,13,9
+    EDITTEXT        IDC_EDIT_C6,138,82,347,12,ES_AUTOHSCROLL
+    LTEXT           "C7=",IDC_STATIC,123,99,13,9
+    EDITTEXT        IDC_EDIT_C7,138,96,347,12,ES_AUTOHSCROLL
+    LTEXT           "C8=",IDC_STATIC,123,113,13,9
+    EDITTEXT        IDC_EDIT_C8,138,110,347,12,ES_AUTOHSCROLL
+    GROUPBOX        "Surface Colorizing    Range 0-100",IDC_STATIC,0,133,488,
+                    79
+    CONTROL         "Enable Color Surface",IDC_CHECK_SHOW_COLOR,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,21,147,90,10
+    LTEXT           "R(x,y,z)=",IDC_STATIC,8,163,29,9
+    EDITTEXT        IDC_EDIT_RED_EQUATION,38,162,444,12,ES_AUTOHSCROLL
+    LTEXT           "G(x,y,z)=",IDC_STATIC,8,179,29,9
+    EDITTEXT        IDC_EDIT_GREEN_EQUATION,38,178,444,12,ES_AUTOHSCROLL
+    LTEXT           "B(x,y,z)=",IDC_STATIC,8,195,29,9
+    EDITTEXT        IDC_EDIT_BLUE_EQUATION,38,194,443,12,ES_AUTOHSCROLL
+    GROUPBOX        "Ranges",IDC_STATIC,0,215,90,64,WS_GROUP
+    CONTROL         "Min",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,
+                    28,226,17,8
+    LTEXT           "Max",IDC_STATIC,58,226,17,8
+    LTEXT           "X",IDC_STATIC,10,237,8,9
+    EDITTEXT        IDC_EDIT_XMIN,22,236,27,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_XMAX,55,236,27,12,ES_AUTOHSCROLL
+    LTEXT           "Y",IDC_STATIC,10,250,8,9
+    EDITTEXT        IDC_EDIT_YMIN,22,249,27,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_YMAX,55,249,27,12,ES_AUTOHSCROLL
+    LTEXT           "Z",IDC_STATIC,10,263,8,9
+    EDITTEXT        IDC_EDIT_ZMIN,22,262,27,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_ZMAX,55,262,27,12,ES_AUTOHSCROLL
+    GROUPBOX        "Mesh Size",IDC_STATIC,93,215,57,64
+    LTEXT           "#",IDC_STATIC,123,226,8,9
+    LTEXT           "X",IDC_STATIC,101,238,8,9
+    EDITTEXT        IDC_EDIT_NX_MESH,113,237,29,12,ES_AUTOHSCROLL
+    LTEXT           "Y",IDC_STATIC,101,251,8,9
+    EDITTEXT        IDC_EDIT_NY_MESH,113,250,29,12,ES_AUTOHSCROLL
+    LTEXT           "Z",IDC_STATIC,101,264,8,9
+    EDITTEXT        IDC_EDIT_NZ_MESH,113,263,29,12,ES_AUTOHSCROLL
+    GROUPBOX        "View Angles (Deg)",IDC_STATIC,0,282,68,47,WS_GROUP
+    LTEXT           "XY Tilt",IDC_STATIC,6,296,28,9
+    EDITTEXT        IDC_EDIT_XYTILT,37,295,26,12,ES_AUTOHSCROLL
+    LTEXT           "Z Rotate",IDC_STATIC,6,312,28,9
+    EDITTEXT        IDC_EDIT_ZROTATE,37,311,26,12,ES_AUTOHSCROLL
+    GROUPBOX        "Overall",IDC_STATIC,1,332,66,67,WS_GROUP
+    LTEXT           "Scale %",IDC_STATIC,7,344,27,9
+    EDITTEXT        IDC_EDIT_SCALE,37,342,21,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Back Color",IDC_BTN_BACK_COLOR,9,358,26,19,BS_MULTILINE
+    CONTROL         "",IDC_STATIC_BG,"Static",SS_SIMPLE | SS_SUNKEN | 
+                    WS_GROUP,39,359,20,18
+    CONTROL         "Show Axis",IDC_CHECK_SHOW_AXIS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,9,381,49,12
+    GROUPBOX        "Line Control",IDC_STATIC,76,282,64,100
+    LTEXT           "Show      #",IDC_STATIC,86,293,43,9
+    LTEXT           "X",IDC_STATIC,82,306,8,9
+    CONTROL         "",IDC_CHECK_DRAW_XLINES,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,92,304,12,12
+    EDITTEXT        IDC_EDIT_NXLINES,108,304,26,12,ES_AUTOHSCROLL
+    LTEXT           "Y",IDC_STATIC,82,319,8,9
+    CONTROL         "",IDC_CHECK_DRAW_YLINES,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,92,317,12,12
+    EDITTEXT        IDC_EDIT_NYLINES,108,317,26,12,ES_AUTOHSCROLL
+    LTEXT           "Z",IDC_STATIC,82,332,8,9
+    CONTROL         "",IDC_CHECK_DRAW_ZLINES,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,92,330,12,12
+    EDITTEXT        IDC_EDIT_NZLINES,108,330,26,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Line Color",IDC_BTN_LINE_COLOR,88,347,40,14
+    CONTROL         "",IDC_STATIC_FG,"Static",SS_SIMPLE | SS_SUNKEN | 
+                    WS_GROUP,88,366,40,8
+END
+
+IDD_SURF_TYPE DIALOG DISCARDABLE  0, 0, 169, 79
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "New Surface Plot"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Surface Type",IDC_STATIC,7,7,115,67,WS_GROUP | 
+                    WS_TABSTOP
+    CONTROL         "x,y,z(u,v)    (Parametric)",IDC_RADIO_SURF_PARAMETRIC,
+                    "Button",BS_AUTORADIOBUTTON,22,24,88,10
+    CONTROL         "z=f(x,y)       (Explicit)",IDC_RADIO_SURF_EXPLICIT,
+                    "Button",BS_AUTORADIOBUTTON,22,40,88,10
+    CONTROL         "f(x,y,z)=0    (Implicit)",IDC_RADIO_SURF_IMPLICIT,
+                    "Button",BS_AUTORADIOBUTTON,22,56,88,10
+    DEFPUSHBUTTON   "OK",IDOK,131,7,35,14
+    PUSHBUTTON      "Cancel",IDCANCEL,131,24,35,14
+END
+
+IDD_FORMN DIALOG DISCARDABLE  0, 0, 159, 258
+STYLE DS_MODALFRAME | WS_CHILD | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           " Edit Surface Methods:\n  1) File / New -  to create a new surface\n  2) File / Open - to open an existing surface\n  3) File / Surface from the most-recent-file list",
+                    IDC_STATIC,10,9,146,37
+    CONTROL         143,IDC_STATIC,"Static",SS_BITMAP | SS_SUNKEN | 
+                    WS_BORDER,10,110,140,137
+    LTEXT           "Example Parametric:  Trefoil2",IDC_STATIC,27,95,97,12
+    LTEXT           "Surface Types:\n 1) Explicit        Z = F( X, Y)\n 2) Implicit        F( X, Y, Z)  =  0\n 3) Parametric   X(U,V)    Y(U,V)    Z(U,V)",
+                    IDC_STATIC,10,51,134,35
+END
+
+IDD_FUNCTIONS DIALOG DISCARDABLE  0, 0, 237, 327
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Functions"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Close",IDOK,93,7,50,14
+    LTEXT           "min(v1,v2)",IDC_STATIC,21,39,40,9
+    LTEXT           "min of two values",IDC_STATIC,71,39,67,9
+    LTEXT           "(  )",IDC_STATIC,157,40,12,9
+    LTEXT           "abs(v)",IDC_STATIC,21,63,40,9
+    LTEXT           "sqrt(v)",IDC_STATIC,21,75,40,9
+    LTEXT           "exp(v)",IDC_STATIC,21,87,40,9
+    LTEXT           "log10(v)",IDC_STATIC,21,99,40,9
+    LTEXT           "ceil(v)",IDC_STATIC,21,123,40,9
+    LTEXT           "floor(v)",IDC_STATIC,21,135,40,9
+    LTEXT           "rand()",IDC_STATIC,21,147,40,9
+    LTEXT           "hypot(x,y)",IDC_STATIC,21,159,40,9
+    LTEXT           "sin(radians)",IDC_STATIC,21,172,40,9
+    LTEXT           "cos(radians)",IDC_STATIC,21,184,40,9
+    LTEXT           "tan(radians)",IDC_STATIC,21,196,40,9
+    LTEXT           "asin(v)",IDC_STATIC,21,207,40,9
+    LTEXT           "acos(v)",IDC_STATIC,21,218,40,9
+    LTEXT           "atan(v)",IDC_STATIC,21,231,40,9
+    LTEXT           "sinh(v)",IDC_STATIC,21,243,40,9
+    LTEXT           "cosh(v)",IDC_STATIC,21,255,40,9
+    LTEXT           "tanh(v)",IDC_STATIC,21,267,40,9
+    LTEXT           "atan2(y,x)",IDC_STATIC,21,279,40,9
+    LTEXT           "sign(v)",IDC_STATIC,21,292,40,9
+    LTEXT           "max of two values",IDC_STATIC,71,51,67,9
+    LTEXT           "absolute value",IDC_STATIC,71,63,67,9
+    LTEXT           "square root",IDC_STATIC,71,75,67,9
+    LTEXT           "e ^ v",IDC_STATIC,71,87,67,9
+    LTEXT           "base 10 lograrithm",IDC_STATIC,71,99,67,9
+    LTEXT           "next higher integer",IDC_STATIC,71,123,67,9
+    LTEXT           "next lowest integer",IDC_STATIC,71,135,67,9
+    LTEXT           "random number",IDC_STATIC,71,147,67,9
+    LTEXT           "hypotenuse: sides x,y",IDC_STATIC,71,159,67,9
+    LTEXT           "trig sine",IDC_STATIC,71,172,67,9
+    LTEXT           "trig cosine",IDC_STATIC,71,184,67,9
+    LTEXT           "trig tangent",IDC_STATIC,71,196,67,9
+    LTEXT           "arc cine",IDC_STATIC,71,207,67,9
+    LTEXT           "arc cosine",IDC_STATIC,71,218,67,9
+    LTEXT           "arc tangent",IDC_STATIC,71,231,67,9
+    LTEXT           "hyperbolic sine",IDC_STATIC,71,243,67,9
+    LTEXT           "hyberbolic tangent",IDC_STATIC,71,267,67,9
+    LTEXT           "hyperbolic cosine",IDC_STATIC,71,255,67,9
+    LTEXT           "arc tangent ( y / x )",IDC_STATIC,71,279,67,9
+    LTEXT           "-1 if v < 0 else + 1",IDC_STATIC,71,292,67,9
+    CTEXT           "Function:",IDC_STATIC,19,27,35,9,WS_BORDER
+    CTEXT           "Purpose:",IDC_STATIC,71,27,34,9,WS_BORDER
+    CTEXT           "Operator:",IDC_STATIC,145,27,33,9,WS_BORDER
+    CTEXT           "Purpose:",IDC_STATIC,180,27,34,9,WS_BORDER
+    LTEXT           "max(v1,v2)",IDC_STATIC,21,51,40,9
+    LTEXT           "+",IDC_STATIC,159,53,11,9
+    LTEXT           "-",IDC_STATIC,159,65,10,9
+    LTEXT           "*",IDC_STATIC,159,77,12,9
+    LTEXT           "/",IDC_STATIC,159,88,11,9
+    LTEXT           "^",IDC_STATIC,159,102,12,9
+    LTEXT           "grouping",IDC_STATIC,184,40,31,9
+    LTEXT           "addition",IDC_STATIC,184,53,31,9
+    LTEXT           "subtraction",IDC_STATIC,184,65,37,9
+    LTEXT           "multiplication",IDC_STATIC,184,75,43,9
+    LTEXT           "division",IDC_STATIC,184,87,31,9
+    LTEXT           "power",IDC_STATIC,184,99,31,9
+    LTEXT           "ln(v)",IDC_STATIC,21,111,40,9
+    LTEXT           "natural lograrithm",IDC_STATIC,71,111,67,9
+    CTEXT           "Constants",IDC_STATIC,152,123,33,9,WS_BORDER
+    LTEXT           "pi     3.141592654",IDC_STATIC,157,135,62,9
+    LTEXT           "e     2.718281828",IDC_STATIC,158,147,65,9
+END
+
+IDD_TIPS DIALOG DISCARDABLE  0, 0, 159, 239
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Tips"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Close",IDOK,54,7,50,14
+    LTEXT           "                     Tips\n  1)  use mouse wheel to zoom\n  2)  hold left mouse button to rotate\n  3)  status at bottom left screen\n  4)  samples in the 'Example' folder\n  5)  implicit form takes more time\n  5)  hover over icons for tips",
+                    IDC_STATIC,21,152,117,63,SS_SUNKEN
+    CONTROL         145,IDC_STATIC,"Static",SS_BITMAP | SS_SUNKEN | 
+                    WS_BORDER,24,29,109,12
+    LTEXT           "                Icons\n  1)  Create surface\n  2)  Open surface\n  3)  Save to disk\n  4)  Copy to clipboard\n  5)  Cancel rendering\n  6)  Plot surface (ie render)\n  7)  Zoom up\n  8)  Zoom down\n  9)  Lock up/down motion\n10)  Lock left/right motion",
+                    IDC_STATIC,34,54,94,91,SS_SUNKEN
+    LTEXT           "   1   2    3   4   5   6   7    8   9   10",IDC_STATIC,
+                    22,40,117,10,SS_SUNKEN
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 3,0,0,1
+ PRODUCTVERSION 3,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "Surface Explorer 3D\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "SurfX3D MFC Application\0"
+            VALUE "FileVersion", "3, 0, 0, 1\0"
+            VALUE "InternalName", "SurfX3D\0"
+            VALUE "LegalCopyright", "Copyright (C) 2021\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "SurfX3D.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "SurfX3D Application\0"
+            VALUE "ProductVersion", "3, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 174
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 97
+    END
+
+    IDD_FORMP, DIALOG
+    BEGIN
+        RIGHTMARGIN, 497
+        BOTTOMMARGIN, 415
+    END
+
+    IDD_FORMZ, DIALOG
+    BEGIN
+        RIGHTMARGIN, 494
+        BOTTOMMARGIN, 423
+    END
+
+    IDD_FORMF, DIALOG
+    BEGIN
+        RIGHTMARGIN, 497
+        BOTTOMMARGIN, 406
+    END
+
+    IDD_SURF_TYPE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 167
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 77
+    END
+
+    IDD_FORMN, DIALOG
+    BEGIN
+        RIGHTMARGIN, 158
+        BOTTOMMARGIN, 252
+    END
+
+    IDD_FUNCTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 230
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 320
+    END
+
+    IDD_TIPS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 152
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 232
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "SurfX3D\n\nSurfX3D\n\n\nSurfX3D.Document\nSurfX3D Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "SurfX3D"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new surface\nNew surface"
+    ID_FILE_OPEN            "Open an existing surface\nOpen surface"
+    ID_FILE_CLOSE           "Close the active surface\nClose surface"
+    ID_FILE_SAVE            "Save the active surface\nSave surface"
+    ID_FILE_SAVE_AS         "Save the active surface with a new name\nSave As"
+    ID_FILE_PAGE_SETUP      "Change the printing options\nPage Setup"
+    ID_FILE_PRINT_SETUP     "Change the printer and printing options\nPrint Setup"
+    ID_FILE_PRINT           "Print the surface image\nPrint"
+    ID_FILE_PRINT_PREVIEW   "Display full pages\nPrint Preview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Surface Explorer 3D contact info\nSurface Explorer 3D"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+    ID_HELP_INDEX           "Opens Help\nHelp Topics"
+    ID_HELP_USING           "Display instructions about how to use help\nHelp"
+    ID_CONTEXT_HELP         "Display help for clicked on buttons, menus and windows\nHelp"
+    ID_HELP                 "Display help for current task or command\nHelp"
+    IDS_INDICATOR_WINSIZE   "1000x1000"
+    IDS_INDICATOR_ANGLES    "                                 "
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this surface"
+    ID_FILE_MRU_FILE2       "Open this surface"
+    ID_FILE_MRU_FILE3       "Open this surface"
+    ID_FILE_MRU_FILE4       "Open this surface"
+    ID_FILE_MRU_FILE5       "Open this surface"
+    ID_FILE_MRU_FILE6       "Open this surface"
+    ID_FILE_MRU_FILE7       "Open this surface"
+    ID_FILE_MRU_FILE8       "Open this surface"
+    ID_FILE_MRU_FILE9       "Open this surface"
+    ID_FILE_MRU_FILE10      "Open this surface"
+    ID_FILE_MRU_FILE11      "Open this surface"
+    ID_FILE_MRU_FILE12      "Open this surface"
+    ID_FILE_MRU_FILE13      "Open this surface"
+    ID_FILE_MRU_FILE14      "Open this surface"
+    ID_FILE_MRU_FILE15      "Open this surface"
+    ID_FILE_MRU_FILE16      "Open this surface"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the rendered surface to the Clipboard\nCopy to clipboard"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "Close print preview mode\nCancel Preview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_PLOT_AUTODRAW        "Automatically plot on file open\nToggle Auto Draw"
+    ID_PLOT_DRAWPLOT        "Draw surface\nDraw surface"
+    ID_EXPORT_VRML          "Export to Virtual Reality Modeling Language\nCreate VRML file"
+    ID_EXPORT_POV           "Export to Persistence of Vision\nCreate POV file"
+    ID_PLOT_CANCEL          "Cancel surface rendering\nCancel plotting"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_ZOOM_IN              "Zoom in\nZoom in"
+    ID_ZOOM_OUT             "Zoom out\nZoom out"
+    ID_BTN_LOCK_UD          "Lock up/down motion\nLock up/down motion"
+    ID_BTN_LOCK_LR          "Lock left/right motion\nLock left/right motion"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\SurfX3D.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#include "afxprint.rc"       // printing/print preview resources
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
