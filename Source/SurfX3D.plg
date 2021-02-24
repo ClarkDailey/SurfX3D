@@ -7,7 +7,7 @@
 </h3>
 <h3>Command Lines</h3>
 Creating command line "rc.exe /l 0x409 /fo"Debug/SurfX3D.res" /d "_DEBUG" "C:\Projects\SurfX3D\Source\SurfX3D.rc"" 
-Creating temporary file "C:\Users\Parents\AppData\Local\Temp\RSPB5C9.tmp" with contents
+Creating temporary file "C:\Users\Parents\AppData\Local\Temp\RSP9A69.tmp" with contents
 [
 /nologo /MTd /W4 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /FR"Debug/" /Fp"Debug/SurfX3D.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
 "C:\Projects\SurfX3D\Source\DlgNewSurf.cpp"
@@ -28,14 +28,14 @@ Creating temporary file "C:\Users\Parents\AppData\Local\Temp\RSPB5C9.tmp" with c
 "C:\Projects\SurfX3D\Source\SurfX3DView.cpp"
 "C:\Projects\SurfX3D\Source\TriMesh.cpp"
 ]
-Creating command line "cl.exe @C:\Users\Parents\AppData\Local\Temp\RSPB5C9.tmp" 
-Creating temporary file "C:\Users\Parents\AppData\Local\Temp\RSPB5CA.tmp" with contents
+Creating command line "cl.exe @C:\Users\Parents\AppData\Local\Temp\RSP9A69.tmp" 
+Creating temporary file "C:\Users\Parents\AppData\Local\Temp\RSP9A6A.tmp" with contents
 [
 /nologo /MTd /W4 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /FR"Debug/" /Fp"Debug/SurfX3D.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
 "C:\Projects\SurfX3D\Source\StdAfx.cpp"
 ]
-Creating command line "cl.exe @C:\Users\Parents\AppData\Local\Temp\RSPB5CA.tmp" 
-Creating temporary file "C:\Users\Parents\AppData\Local\Temp\RSPB5CB.tmp" with contents
+Creating command line "cl.exe @C:\Users\Parents\AppData\Local\Temp\RSP9A6A.tmp" 
+Creating temporary file "C:\Users\Parents\AppData\Local\Temp\RSP9A6B.tmp" with contents
 [
 opengl32.lib glu32.lib glaux.lib /nologo /subsystem:windows /incremental:yes /pdb:"Debug/SurfX3D.pdb" /debug /machine:I386 /out:"Debug/SurfX3D.exe" /pdbtype:sept 
 .\Debug\DlgNewSurf.obj
@@ -58,7 +58,7 @@ opengl32.lib glu32.lib glaux.lib /nologo /subsystem:windows /incremental:yes /pd
 .\Debug\TriMesh.obj
 .\Debug\SurfX3D.res
 ]
-Creating command line "link.exe @C:\Users\Parents\AppData\Local\Temp\RSPB5CB.tmp"
+Creating command line "link.exe @C:\Users\Parents\AppData\Local\Temp\RSP9A6B.tmp"
 <h3>Output Window</h3>
 Compiling resources...
 Compiling...
@@ -83,7 +83,7 @@ SurfX3DView.cpp
 TriMesh.cpp
 Generating Code...
 Linking...
-Creating temporary file "C:\Users\Parents\AppData\Local\Temp\RSPBDF7.tmp" with contents
+Creating temporary file "C:\Users\Parents\AppData\Local\Temp\RSPA2F4.tmp" with contents
 [
 /nologo /o"Debug/SurfX3D.bsc" 
 .\Debug\StdAfx.sbr
@@ -104,15 +104,15 @@ Creating temporary file "C:\Users\Parents\AppData\Local\Temp\RSPBDF7.tmp" with c
 .\Debug\SurfX3DDoc.sbr
 .\Debug\SurfX3DView.sbr
 .\Debug\TriMesh.sbr]
-Creating command line "bscmake.exe @C:\Users\Parents\AppData\Local\Temp\RSPBDF7.tmp"
+Creating command line "bscmake.exe @C:\Users\Parents\AppData\Local\Temp\RSPA2F4.tmp"
 Creating browse info file...
 <h3>Output Window</h3>
-Creating temporary file "C:\Users\Parents\AppData\Local\Temp\RSPBEE2.bat" with contents
+Creating temporary file "C:\Users\Parents\AppData\Local\Temp\RSPA3EF.bat" with contents
 [
 @echo off
 xcopy /y Debug\SurfX3D.exe ..\*.*
 ]
-Creating command line "C:\Users\Parents\AppData\Local\Temp\RSPBEE2.bat"
+Creating command line "C:\Users\Parents\AppData\Local\Temp\RSPA3EF.bat"
 
 Debug\SurfX3D.exe
 1 File(s) copied
