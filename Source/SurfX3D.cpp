@@ -91,8 +91,6 @@ BOOL CSurfX3DApp::InitInstance()
     m_sExeFullPath = path;
     m_sExeFolder   = ExtractPathDir(path);
 
-//    m_sExeFolder  = "C:\\Projects\\SurfX3D"; // ### testing while debugging only
-
     // build help file path if file exists
     CString sTemp = m_sExeFolder + "\\" HELP_FILE_NAME;
     if (DoesFileExist(sTemp))

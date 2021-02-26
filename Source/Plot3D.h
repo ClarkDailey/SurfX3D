@@ -258,7 +258,7 @@ public:
 protected:	// routines
 	void FreeTriangles(void);
 	Triangle3DT* AddTriangle(Point3DT* pP1,Point3DT* pP2,Point3DT* pP3);
-	Point3DT*    AddPoint(double x,double y,double z,double r,double g,double b);
+	Point3DT*    AddPoint(double x,double y,double z,double r,double g,double b,char zbad);
 	Line3DT*     AddLine(double x1,double y1,double z1,double x2,double y2,double z2);
 	Point3DT*    GetPointPtr(unsigned int i)    { return((Point3DT   *)&m_pPoints[i]); }
 	Line3DT*     GetLinePtr(unsigned int i)     { return((Line3DT    *)&m_pLines[i]); }

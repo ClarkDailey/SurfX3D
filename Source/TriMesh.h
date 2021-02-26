@@ -36,11 +36,12 @@ public:
 		m_zn		  = pt.m_zn;        
 		m_red		  = pt.m_red;       
 		m_green		  = pt.m_green;     
-		m_blue		  = pt.m_blue;      
+		m_blue		  = pt.m_blue;
+        m_zbad        = pt.m_zbad;
 		return(*this);
 	}
 
-	void Load(double x,double y,double z,double r,double g,double b)
+	void Load(double x,double y,double z,double r,double g,double b,char zbad)
 	{
 		m_xf    = x;
 		m_yf    = y;
@@ -48,15 +49,17 @@ public:
 		m_red   = r;
 		m_green = g;
 		m_blue  = b;
+        m_zbad  = zbad;
 	}
 
 	void SetNormVect(double xn,double yn,double zn)	{ m_xn=xn; m_yn=yn; m_zn=zn; }
 
 // public to avoid access functions
 public: // 
-	double m_xf,m_yf,m_zf;	// function coordinates
-	double m_xn,m_yn,m_zn;	// normal surface vector
-	double m_red, m_green, m_blue;	// color of point
+	double   m_xf,m_yf,m_zf;	// function coordinates
+	double   m_xn,m_yn,m_zn;	// normal surface vector
+	double   m_red, m_green, m_blue;	// color of point
+    char     m_zbad;            // 0=no, 1=z is out of range
 };
 
 // --------------

@@ -2,7 +2,7 @@
 
 [General Info]
 Version=1
-LastClass=CFormN
+LastClass=CAboutDlg
 LastTemplate=CDialog
 NewFileInclude1=#include "stdafx.h"
 NewFileInclude2=#include "SurfX3D.h"
@@ -15,21 +15,21 @@ Class3=CSurfX3DView
 Class4=CMainFrame
 
 ResourceCount=10
-Resource1=IDD_ABOUTBOX
+Resource1=IDD_FUNCTIONS
 Class5=CAboutDlg
 Resource2=IDR_MAINFRAME
 Class6=CFormP
 Resource3=IDD_FORMF
-Resource4=IDD_FORMP
+Resource4=IDD_ABOUTBOX
 Class7=CFormF
 Class8=CFormZ
-Resource5=IDD_FUNCTIONS
+Resource5=IDD_FORMP
 Class9=CDlgNewSurf
 Resource6=IDD_DIALOG_EXPORT_POV
 Class10=CFormN
 Resource7=IDD_FORMZ
-Resource8=IDD_SURF_TYPE
-Resource9=IDD_FORMN
+Resource8=IDD_FORMN
+Resource9=IDD_SURF_TYPE
 Resource10=IDD_TIPS
 
 [CLS:CSurfX3DApp]

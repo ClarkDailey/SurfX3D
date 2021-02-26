@@ -34,6 +34,7 @@ protected:	// routines
 	virtual double YParametric(double u,double v)=0;
 	virtual double ZParametric(double u,double v)=0;
 	virtual int InitEquations(void)=0;
+    char IsInvalidZ(void) { return(m_zbad); }
 
 	// color info
 	virtual double RedColor  (double u,double v,double w)=0;
@@ -66,6 +67,7 @@ protected:
 	BOOL     m_draw_ulines;			// 0=no, 1=draw U lines
 	BOOL     m_draw_vlines;			// 0=no, 1=draw V lines
 	unsigned m_is_color_xyz;		// 0=u,v 1=color uses x,y,z
+    char     m_zbad;                // 0=ok, 1=z is limited and outside range
 };
 
 #endif	/* if _PLOT3DT_H_ included */

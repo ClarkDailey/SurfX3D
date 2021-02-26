@@ -47,7 +47,7 @@ Plot3D::Plot3D()
 	logfont.lfWidth         = 0;
 	logfont.lfEscapement    = 0;
 	logfont.lfOrientation   = logfont.lfEscapement;
-	logfont.lfWeight        = FW_NORMAL;
+	logfont.lfWeight        = FW_EXTRABOLD;
 	logfont.lfItalic        = FALSE;
 	logfont.lfUnderline     = FALSE;
 	logfont.lfStrikeOut     = FALSE;
@@ -371,7 +371,7 @@ void Plot3D::MsgPump()
 void Plot3D::GenAxis()
 {
 	CString str;
-	double dx,dy,dz,x1,y1,z1;
+	double dx,dy,dz,x1,y1,z1,dt,t;
 	unsigned int n;
 
 	if (!m_show_axis) return;
@@ -416,9 +416,11 @@ void Plot3D::GenAxis()
 	y1 = ycorn[0];
 	z1 = zcorn[0];
 	dx = dx/(double)(nxticks-1);
-	for (n=0;n<nxticks;n++,x1+=dx)
+    dt = (m_xmax-m_xmin)/(nxticks-1);
+    t  = m_xmin;
+	for (n=0;n<nxticks;n++,x1+=dx,t+=dt)
 	{
-		str.Format(" x =%8.4lf",x1);
+		str.Format(" x =%8.4lf",t);
 		WinPlotText(-90., x1,y1,z1,str);
 	}
 
@@ -431,9 +433,11 @@ void Plot3D::GenAxis()
 	y1 = ycorn[0];
 	z1 = zcorn[0];
 	dy = dy/(double)(nyticks-1);
-	for (n=0;n<nyticks;n++,y1+=dy)
+    dt = (m_ymax-m_ymin)/(nyticks-1);
+    t  = m_ymin;
+	for (n=0;n<nyticks;n++,y1+=dy,t+=dt)
 	{
-		str.Format(" y =%8.4lf",y1);
+		str.Format(" y =%8.4lf",t);
 		WinPlotText(0., x1,y1,z1,str);
 	}
 
@@ -446,9 +450,11 @@ void Plot3D::GenAxis()
 	y1 = ycorn[1];
 	z1 = zcorn[0];
 	dz = dz/(double)(nzticks-1);
-	for (n=0;n<nzticks;n++,z1+=dz)
+    dt = (m_zmax-m_zmin)/(nzticks-1);
+    t  = m_zmin;
+	for (n=0;n<nzticks;n++,z1+=dz,t+=dt)
 	{
-		str.Format(" z =%8.4lf",-z1);		// account for lefty
+		str.Format(" z =%8.4lf",t);
 		WinPlotText(90., x1,y1,z1,str);
 	}
 }
@@ -850,7 +856,7 @@ void Plot3D::FreeTriangles(void)
 }
 
 // ------------------------------------------------------------
-Point3DT* Plot3D::AddPoint(double x,double y,double z,double r,double g,double b)
+Point3DT* Plot3D::AddPoint(double x,double y,double z,double r,double g,double b,char zbad)
 {
 	Point3DT* pPnt;
 
@@ -871,7 +877,7 @@ Point3DT* Plot3D::AddPoint(double x,double y,double z,double r,double g,double b
 
 	// get pointer to new object
 	pPnt = GetPointPtr(m_nPoints);
-	pPnt->Load(x,y,z,r,g,b);
+	pPnt->Load(x,y,z,r,g,b,zbad);
 	m_nPoints++;	// one more point
 	return(pPnt);
 }
@@ -904,10 +910,13 @@ Line3DT* Plot3D::AddLine(double x1,double y1,double z1,double x2,double y2,doubl
 }
 
 // ------------------------------------------------------------
+// returns NULL if z is invalid on any of the three points
 Triangle3DT* Plot3D::AddTriangle(Point3DT* pP1,Point3DT* pP2,Point3DT* pP3)
 {
 	double r0,g0,b0,r1,g1,b1,r2,g2,b2,rt,gt,bt;
 	Triangle3DT* pTri;
+
+    if (pP1->m_zbad || pP2->m_zbad || pP3->m_zbad) return(NULL);
 
 	// need reallocation?
 	if ((m_nTriangles+1) >=m_maxTriangles)

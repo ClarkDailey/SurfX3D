@@ -33,13 +33,14 @@ public:
 	double Zfunc(double x,double y)
 	{
 		double z = m_PlotCalc.Calc(x,y);
+        m_zbad = 0;
 		if (!m_limit_z) return(z);
 		// limit z values to user defined
-		if (z < m_zmin) z = m_zmin;
-		if (z > m_zmax) z = m_zmax;
+        if (z < m_zmin) { z = m_zmin; m_zbad = 1; }
+        if (z > m_zmax) { z = m_zmax; m_zbad = 1; }
 		return(z);
 	}
-	
+
 	void Reset(void)
 	{
 		ResetUV();

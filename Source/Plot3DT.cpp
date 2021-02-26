@@ -68,6 +68,10 @@ int PlotTriUV::CalcPointsUV()
 	double udelta, vdelta;
 	double red=PLOT3D_MAX_COLOR, green=PLOT3D_MAX_COLOR, blue=PLOT3D_MAX_COLOR;
 	unsigned i,j;
+    char   zbad;
+
+    // initialize
+    m_zbad = 0;
 
 	// range check to avoid division by zero
 	if (m_nulines<2) m_nulines=2;
@@ -90,6 +94,7 @@ int PlotTriUV::CalcPointsUV()
 			x  = XParametric(u, v);
 			y  = YParametric(u, v);
 			z  = ZParametric(u, v);
+            zbad = IsInvalidZ();
 			if (m_is_color_xyz)
 			{
 				red   = RedColor  (x,y,z);
@@ -102,7 +107,7 @@ int PlotTriUV::CalcPointsUV()
 				green = GreenColor(u,v,0);
 				blue  = BlueColor (u,v,0);
 			}
-			pPnt = AddPoint(x,y,z,red,green,blue);
+			pPnt = AddPoint(x,y,z,red,green,blue,zbad);
 
 			// calculate normal surface vector at the point
 			un = u+du;
@@ -170,6 +175,7 @@ int PlotTriUV::GenULines()
 	double x1,y1,z1,x2,y2,z2;
 	double u,v,udelta,vdelta;
 	unsigned i,j,percent_complete;
+    char z1bad, z2bad;
 
 	if (!m_draw_ulines) return(0);
 
@@ -183,6 +189,7 @@ int PlotTriUV::GenULines()
 		x1 = XParametric(u, v);
 		y1 = YParametric(u, v);
 		z1 = ZParametric(u, v);
+        z1bad = IsInvalidZ();
 		v += vdelta;
 		for (j=0; j<m_nyMesh-1; j++,v+=vdelta)
 		{
@@ -190,11 +197,14 @@ int PlotTriUV::GenULines()
 			x2 = XParametric(u, v);
 			y2 = YParametric(u, v);
 			z2 = ZParametric(u, v);
+            z2bad = IsInvalidZ();
 
-			AddLine(x1, y1, z1, x2, y2, z2); 
+            if (z1bad==0 && z2bad==0)
+    			AddLine(x1, y1, z1, x2, y2, z2); 
 			x1 = x2;
 			y1 = y2;
 			z1 = z2;
+            z1bad = z2bad;
 
 		} // for j
 
@@ -214,6 +224,7 @@ int PlotTriUV::GenVLines()
 	double x1,y1,z1,x2,y2,z2;
 	double u,v,udelta,vdelta;
 	unsigned i,j,percent_complete;
+    char z1bad, z2bad;
 
 	if (!m_draw_vlines) return(0);
 
@@ -227,6 +238,8 @@ int PlotTriUV::GenVLines()
 		x1 = XParametric(u, v);
 		y1 = YParametric(u, v);
 		z1 = ZParametric(u, v);
+        z1bad = IsInvalidZ();
+
 		u += udelta;
 		for (j=0; j<m_nxMesh-1; j++,u+=udelta)
 		{
@@ -234,11 +247,14 @@ int PlotTriUV::GenVLines()
 			x2 = XParametric(u, v);
 			y2 = YParametric(u, v);
 			z2 = ZParametric(u, v);
+            z2bad = IsInvalidZ();
 
-			AddLine(x1, y1, z1, x2, y2, z2); 
+            if (z1bad==0 && z2bad==0)
+    			AddLine(x1, y1, z1, x2, y2, z2); 
 			x1 = x2;
 			y1 = y2;
 			z1 = z2;
+            z1bad = z2bad;
 
 		} // for j
 
@@ -270,8 +286,8 @@ int PlotTriUV::CalcTrianglesUV()
 	{
 		for (j=0; j<nvtriangles; j++)
 		{
-			pTrngl = AddTriangle(PointUV(i,j+1), PointUV(i,j),PointUV(i+1,j));
-			pTrngl = AddTriangle(PointUV(i+1,j),PointUV(i+1,j+1),PointUV(i,j+1));
+			pTrngl = AddTriangle(PointUV(i,j+1), PointUV(i,j),     PointUV(i+1,j));
+			pTrngl = AddTriangle(PointUV(i+1,j), PointUV(i+1,j+1), PointUV(i,j+1));
 		} // for j
 	} // for i
 

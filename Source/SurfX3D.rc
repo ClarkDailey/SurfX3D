@@ -178,20 +178,20 @@ END
 // Dialog
 //
 
-IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 181, 106
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 158, 93
 STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "About SurfX3D"
-FONT 8, "MS Sans Serif"
+FONT 10, "MS Sans Serif"
 BEGIN
-    DEFPUSHBUTTON   "OK",IDOK,132,7,42,14,WS_GROUP
+    DEFPUSHBUTTON   "Close",IDOK,120,7,32,14,WS_GROUP
     ICON            IDR_MAINFRAME,IDC_STATIC,9,12,20,20
-    LTEXT           "Surface Explorer 3D v3.0",IDC_STATIC,39,11,88,8,
+    LTEXT           "Surface Explorer 3D v3.0",IDC_STATIC,39,11,77,8,
                     SS_NOPREFIX
     LTEXT           "Copyright (C) 2021",IDC_STATIC,41,25,72,8
-    CTEXT           "Clark Dailey\nclarkdailey@comcast.net",IDC_STATIC,45,46,
+    CTEXT           "Clark Dailey\nclarkdailey@comcast.net",IDC_STATIC,32,39,
                     90,21,SS_SUNKEN
     CTEXT           "e-mail me your interesting surface files,\nand I will include them in the examples.",
-                    IDC_STATIC,25,70,138,20,SS_NOPREFIX | SS_SUNKEN
+                    IDC_STATIC,10,65,138,20,SS_NOPREFIX | SS_SUNKEN
 END
 
 IDD_FORMP DIALOG DISCARDABLE  0, 0, 500, 418
@@ -454,7 +454,7 @@ END
 IDD_SURF_TYPE DIALOG DISCARDABLE  0, 0, 169, 79
 STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "New Surface Plot"
-FONT 8, "MS Sans Serif"
+FONT 10, "MS Sans Serif"
 BEGIN
     GROUPBOX        "Surface Type",IDC_STATIC,7,7,115,67,WS_GROUP | 
                     WS_TABSTOP
@@ -468,23 +468,23 @@ BEGIN
     PUSHBUTTON      "Cancel",IDCANCEL,131,24,35,14
 END
 
-IDD_FORMN DIALOG DISCARDABLE  0, 0, 159, 258
+IDD_FORMN DIALOG DISCARDABLE  0, 0, 159, 267
 STYLE DS_MODALFRAME | WS_CHILD | WS_CAPTION | WS_SYSMENU
-FONT 8, "MS Sans Serif"
+FONT 10, "MS Sans Serif"
 BEGIN
     LTEXT           " Edit Surface Methods:\n  1) File / New -  to create a new surface\n  2) File / Open - to open an existing surface\n  3) File / Surface from the most-recent-file list",
                     IDC_STATIC,10,9,146,37
     CONTROL         143,IDC_STATIC,"Static",SS_BITMAP | SS_SUNKEN | 
-                    WS_BORDER,10,110,140,137
+                    WS_BORDER,7,108,146,150
     LTEXT           "Example Parametric:  Trefoil2",IDC_STATIC,27,95,97,12
     LTEXT           "Surface Types:\n 1) Explicit        Z = F( X, Y)\n 2) Implicit        F( X, Y, Z)  =  0\n 3) Parametric   X(U,V)    Y(U,V)    Z(U,V)",
                     IDC_STATIC,10,51,134,35
 END
 
-IDD_FUNCTIONS DIALOG DISCARDABLE  0, 0, 237, 327
+IDD_FUNCTIONS DIALOG DISCARDABLE  0, 0, 237, 315
 STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Functions"
-FONT 8, "MS Sans Serif"
+FONT 10, "MS Sans Serif"
 BEGIN
     DEFPUSHBUTTON   "Close",IDOK,93,7,50,14
     LTEXT           "min(v1,v2)",IDC_STATIC,21,39,40,9
@@ -552,20 +552,20 @@ BEGIN
     LTEXT           "e     2.718281828",IDC_STATIC,158,147,65,9
 END
 
-IDD_TIPS DIALOG DISCARDABLE  0, 0, 159, 239
+IDD_TIPS DIALOG DISCARDABLE  0, 0, 136, 221
 STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Tips"
-FONT 8, "MS Sans Serif"
+FONT 10, "MS Sans Serif"
 BEGIN
-    DEFPUSHBUTTON   "Close",IDOK,54,7,50,14
+    DEFPUSHBUTTON   "Close",IDOK,44,7,50,14
     LTEXT           "                     Tips\n  1)  use mouse wheel to zoom\n  2)  hold left mouse button to rotate\n  3)  status at bottom left screen\n  4)  samples in the 'Example' folder\n  5)  implicit form takes more time\n  5)  hover over icons for tips",
-                    IDC_STATIC,21,152,117,63,SS_SUNKEN
+                    IDC_STATIC,14,152,110,63,SS_SUNKEN
     CONTROL         145,IDC_STATIC,"Static",SS_BITMAP | SS_SUNKEN | 
-                    WS_BORDER,24,29,109,12
+                    WS_BORDER,13,27,109,12
     LTEXT           "                Icons\n  1)  Create surface\n  2)  Open surface\n  3)  Save to disk\n  4)  Copy to clipboard\n  5)  Cancel rendering\n  6)  Plot surface (ie render)\n  7)  Zoom up\n  8)  Zoom down\n  9)  Lock up/down motion\n10)  Lock left/right motion",
-                    IDC_STATIC,34,54,94,91,SS_SUNKEN
-    LTEXT           "   1   2    3   4   5   6   7    8   9   10",IDC_STATIC,
-                    22,40,117,10,SS_SUNKEN
+                    IDC_STATIC,25,54,84,91,SS_SUNKEN
+    LTEXT           "  1    2     3     4     5     6    7     8     9    10",
+                    IDC_STATIC,15,40,108,10,SS_SUNKEN
 END
 
 
@@ -626,9 +626,9 @@ BEGIN
     IDD_ABOUTBOX, DIALOG
     BEGIN
         LEFTMARGIN, 7
-        RIGHTMARGIN, 174
+        RIGHTMARGIN, 152
         TOPMARGIN, 7
-        BOTTOMMARGIN, 97
+        BOTTOMMARGIN, 88
     END
 
     IDD_FORMP, DIALOG
@@ -660,7 +660,7 @@ BEGIN
     IDD_FORMN, DIALOG
     BEGIN
         RIGHTMARGIN, 158
-        BOTTOMMARGIN, 252
+        BOTTOMMARGIN, 261
     END
 
     IDD_FUNCTIONS, DIALOG
@@ -668,15 +668,15 @@ BEGIN
         LEFTMARGIN, 7
         RIGHTMARGIN, 230
         TOPMARGIN, 7
-        BOTTOMMARGIN, 320
+        BOTTOMMARGIN, 308
     END
 
     IDD_TIPS, DIALOG
     BEGIN
         LEFTMARGIN, 7
-        RIGHTMARGIN, 152
+        RIGHTMARGIN, 129
         TOPMARGIN, 7
-        BOTTOMMARGIN, 232
+        BOTTOMMARGIN, 219
     END
 END
 #endif    // APSTUDIO_INVOKED
