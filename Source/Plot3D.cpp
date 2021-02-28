@@ -642,7 +642,6 @@ void Plot3D::Paint(int swapBuf)
 	{
 		if (m_pWnd)
 		{
-			// having problem with exception here
 			CDC* pDC = m_pWnd->GetDC();
 			if (pDC)
 			{
@@ -916,7 +915,7 @@ Triangle3DT* Plot3D::AddTriangle(Point3DT* pP1,Point3DT* pP2,Point3DT* pP3)
 	double r0,g0,b0,r1,g1,b1,r2,g2,b2,rt,gt,bt;
 	Triangle3DT* pTri;
 
-    if (pP1->m_zbad || pP2->m_zbad || pP3->m_zbad) return(NULL);
+    if (pP1->m_zbad && pP2->m_zbad && pP3->m_zbad) return(NULL);
 
 	// need reallocation?
 	if ((m_nTriangles+1) >=m_maxTriangles)

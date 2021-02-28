@@ -414,6 +414,7 @@ int PlotTriUV::ExportPOV(CString povFilePath,CString sPovObjectName)
 		Pnt1 = pTri->GetPoint(0);
 		Pnt2 = pTri->GetPoint(1);
 		Pnt3 = pTri->GetPoint(2);
+        if (Pnt1->m_zbad && Pnt2->m_zbad && Pnt3->m_zbad) continue;
 		fprintf(fhpov," smooth_triangle {<%.6lf,%.6lf,%.6lf>,<%.6lf,%.6lf,%.6lf>,<%.6lf,%.6lf,%.6lf>,<%.6lf,%.6lf,%.6lf>,<%.6lf,%.6lf,%.6lf>,<%.6lf,%.6lf,%.6lf>",
 			Pnt1->m_xf,Pnt1->m_yf,-Pnt1->m_zf, -Pnt1->m_xn,-Pnt1->m_yn,Pnt1->m_zn,
 			Pnt2->m_xf,Pnt2->m_yf,-Pnt2->m_zf, -Pnt2->m_xn,-Pnt2->m_yn,Pnt2->m_zn,
@@ -630,7 +631,10 @@ int PlotTriUV::ExportVRML(CString sVrmlFilePath,CString sVrmlSurfaceName)
 // export file to Drawing Exchange File (DXF) format
 int PlotTriUV::ExportDXF(CString sDxfFilePath,CString sDxfSurfaceName)
 {
-	Point3DT* pPnt;
+	Point3DT* pPnt1;
+	Point3DT* pPnt2;
+	Point3DT* pPnt3;
+	Point3DT* pPnt4;
 	unsigned i,j;
 	FILE* fhdxf=0;
 
@@ -675,6 +679,12 @@ int PlotTriUV::ExportDXF(CString sDxfFilePath,CString sDxfSurfaceName)
 	{
 	 	for (i=0; i<m_nxMesh-1; i++)
 		{
+			pPnt1 = PointUV(i,  j  );
+			pPnt2 = PointUV(i,  j+1);
+			pPnt3 = PointUV(i+1,j+1);
+			pPnt4 = PointUV(i+1,j  );
+            if (pPnt1->m_zbad && pPnt2->m_zbad && pPnt3->m_zbad && pPnt4->m_zbad) continue;
+
 			fprintf(fhdxf,"0\n");
 			fprintf(fhdxf,"3DFACE\n");
 			fprintf(fhdxf,"8\n");
@@ -682,37 +692,33 @@ int PlotTriUV::ExportDXF(CString sDxfFilePath,CString sDxfSurfaceName)
 			fprintf(fhdxf,"70\n");
 			fprintf(fhdxf,"0\n");
 
-			pPnt = PointUV(i,j);
 			fprintf(fhdxf,"10\n");
-			fprintf(fhdxf,"%10.6lf\n",pPnt->m_xf);
+			fprintf(fhdxf,"%10.6lf\n",pPnt1->m_xf);
 			fprintf(fhdxf,"20\n");
-			fprintf(fhdxf,"%10.6lf\n",pPnt->m_yf);
+			fprintf(fhdxf,"%10.6lf\n",pPnt1->m_yf);
 			fprintf(fhdxf,"30\n");
-			fprintf(fhdxf,"%10.6lf\n",pPnt->m_zf);
+			fprintf(fhdxf,"%10.6lf\n",pPnt1->m_zf);
 
-			pPnt = PointUV(i,j+1);
 			fprintf(fhdxf,"11\n");
-			fprintf(fhdxf,"%10.6lf\n",pPnt->m_xf);
+			fprintf(fhdxf,"%10.6lf\n",pPnt2->m_xf);
 			fprintf(fhdxf,"21\n");	            
-			fprintf(fhdxf,"%10.6lf\n",pPnt->m_yf);
+			fprintf(fhdxf,"%10.6lf\n",pPnt2->m_yf);
 			fprintf(fhdxf,"31\n");	            
-			fprintf(fhdxf,"%10.6lf\n",pPnt->m_zf);
+			fprintf(fhdxf,"%10.6lf\n",pPnt2->m_zf);
 
-			pPnt = PointUV(i+1,j+1);
 			fprintf(fhdxf,"12\n");
-			fprintf(fhdxf,"%10.6lf\n",pPnt->m_xf);
+			fprintf(fhdxf,"%10.6lf\n",pPnt3->m_xf);
 			fprintf(fhdxf,"22\n");	            
-			fprintf(fhdxf,"%10.6lf\n",pPnt->m_yf);
+			fprintf(fhdxf,"%10.6lf\n",pPnt3->m_yf);
 			fprintf(fhdxf,"32\n");	            
-			fprintf(fhdxf,"%10.6lf\n",pPnt->m_zf);
+			fprintf(fhdxf,"%10.6lf\n",pPnt3->m_zf);
 
-			pPnt = PointUV(i+1,j);
 			fprintf(fhdxf,"13\n");
-			fprintf(fhdxf,"%10.6lf\n",pPnt->m_xf);
+			fprintf(fhdxf,"%10.6lf\n",pPnt4->m_xf);
 			fprintf(fhdxf,"23\n");	            
-			fprintf(fhdxf,"%10.6lf\n",pPnt->m_yf);
+			fprintf(fhdxf,"%10.6lf\n",pPnt4->m_yf);
 			fprintf(fhdxf,"33\n");	            
-			fprintf(fhdxf,"%10.6lf\n",pPnt->m_zf);
+			fprintf(fhdxf,"%10.6lf\n",pPnt4->m_zf);
 		} // for j
 	} // for i
 
@@ -739,7 +745,7 @@ int PlotTriUV::ExportSTL(CString sStlFilePath,CString sStlSurfaceName)
     STL_HEADER   stlHdr;
     STL_TRIANGLE stlTri;
     double xn, yn, zn;
-	unsigned i,j;
+	unsigned i,j, nTriangles;
 	FILE* fhstl=0;
 
 	if (!IsRendered()) return(0);
@@ -748,12 +754,29 @@ int PlotTriUV::ExportSTL(CString sStlFilePath,CString sStlSurfaceName)
 	fhstl = fopen((LPCTSTR)sStlFilePath,"wb");
 	if (fhstl == NULL) return(1);
 
+    // count number of triangles
+    nTriangles = 0;
+	for (j=0; j<m_nyMesh-1; j++)
+	{
+	 	for (i=0; i<m_nxMesh-1; i++)
+		{
+            // get four corners of mesh
+			pPnt1 = PointUV(i,  j  );
+			pPnt2 = PointUV(i,  j+1);
+			pPnt3 = PointUV(i+1,j  );
+			pPnt4 = PointUV(i+1,j+1);
+
+            if (!pPnt1->m_zbad || !pPnt2->m_zbad || !pPnt4->m_zbad) nTriangles++;
+            if (!pPnt1->m_zbad || !pPnt3->m_zbad || !pPnt4->m_zbad) nTriangles++;
+        } // for i
+    } // for j
+
 	// ---------------
 	// STL File Header
 	// ---------------
     memset(&stlHdr, 0, sizeof(stlHdr)); // clear
 	sprintf((char*)&stlHdr.hdr, "Created from SurfX3D: %s", sStlSurfaceName);
-    stlHdr.nTriangles = (2L*(m_nyMesh-1)*(m_nxMesh-1));
+    stlHdr.nTriangles = nTriangles;
     fwrite(&stlHdr, 1, sizeof(stlHdr), fhstl);  // write header
 
 	// -------------
@@ -801,7 +824,8 @@ int PlotTriUV::ExportSTL(CString sStlFilePath,CString sStlSurfaceName)
             stlTri.normVector.z = (float)zn;
     
             // write triangle data to file
-            fwrite(&stlTri, 1, sizeof(stlTri), fhstl);
+            if (!pPnt1->m_zbad || !pPnt2->m_zbad || !pPnt4->m_zbad)
+                fwrite(&stlTri, 1, sizeof(stlTri), fhstl);
 
             // ---------------
             // Second Triangle
@@ -822,7 +846,8 @@ int PlotTriUV::ExportSTL(CString sStlFilePath,CString sStlSurfaceName)
             stlTri.normVector.z = (float)zn;
     
             // write triangle data to file
-            fwrite(&stlTri, 1, sizeof(stlTri), fhstl);
+            if (!pPnt1->m_zbad || !pPnt3->m_zbad || !pPnt4->m_zbad)
+                fwrite(&stlTri, 1, sizeof(stlTri), fhstl);
 
 		} // for j
 	} // for i
