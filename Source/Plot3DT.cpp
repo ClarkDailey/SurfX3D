@@ -47,6 +47,7 @@ void PlotTriUV::DefInputsUV(void)
 	m_umax =  10;
 	m_vmin = -10;
 	m_vmax =  10;
+    m_zbad =   0;
 }
 
 // ------------------------------------------------------------

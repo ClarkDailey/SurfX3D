@@ -24,20 +24,20 @@
 class Point3DT
 {
 public:
-	Point3DT() { }
+	Point3DT()  { m_zbad=0; }
 	~Point3DT() { }
 	Point3DT& operator=(const Point3DT &pt) // assignment operator
 	{
-		m_xf		  = pt.m_xf;        
-		m_yf		  = pt.m_yf;        
-		m_zf		  = pt.m_zf;        
-		m_xn		  = pt.m_xn;        
-		m_yn		  = pt.m_yn;        
-		m_zn		  = pt.m_zn;        
-		m_red		  = pt.m_red;       
-		m_green		  = pt.m_green;     
-		m_blue		  = pt.m_blue;
-        m_zbad        = pt.m_zbad;
+		m_xf	= pt.m_xf;        
+		m_yf	= pt.m_yf;        
+		m_zf	= pt.m_zf;        
+		m_xn	= pt.m_xn;        
+		m_yn	= pt.m_yn;        
+		m_zn	= pt.m_zn;        
+		m_red	= pt.m_red;       
+		m_green	= pt.m_green;     
+		m_blue	= pt.m_blue;
+        m_zbad  = pt.m_zbad;
 		return(*this);
 	}
 
